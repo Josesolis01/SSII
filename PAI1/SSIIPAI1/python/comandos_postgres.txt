@@ -1,0 +1,44 @@
+# Crear un archivo de texto con una chuleta de comandos útiles para la consola de PostgreSQL (psql)
+
+comandos = """\
+# 🐘 Comandos útiles de PostgreSQL (psql)
+
+## Conexión
+psql -U <usuario> -d <basedatos> -h localhost -p 5432
+
+## Navegación básica
+\\l                  -- listar bases de datos
+\\c basedatos        -- conectarse a una base de datos
+\\dt                 -- listar tablas del esquema actual
+\\dn                 -- listar esquemas
+\\d tabla            -- ver definición de una tabla
+\\d+ tabla           -- ver definición + detalles
+\\conninfo           -- info de la conexión actual
+\\q                  -- salir de psql
+
+## Consultas SQL
+SELECT * FROM usuarios;               -- ver todos los registros de la tabla usuarios
+SELECT COUNT(*) FROM usuarios;        -- contar registros
+INSERT INTO usuarios (username, password) VALUES ('juan', '1234');
+UPDATE usuarios SET password='abcd' WHERE username='juan';
+DELETE FROM usuarios WHERE username='juan';
+
+## Privilegios y dueños (requiere ser superusuario)
+\\du                 -- listar roles/usuarios
+\\dt+                -- listar tablas con info de dueño y permisos
+ALTER TABLE usuarios OWNER TO pualacarcel;
+GRANT ALL PRIVILEGES ON DATABASE ssiidb TO pualacarcel;
+GRANT SELECT, INSERT, UPDATE, DELETE ON usuarios TO pualacarcel;
+
+## Ayuda dentro de psql
+\\?                  -- lista de comandos psql
+\\h                  -- ayuda de sentencias SQL
+\\h CREATE TABLE     -- ayuda específica de CREATE TABLE
+"""
+
+# Guardar en un archivo .txt
+ruta = "/mnt/data/chuleta_postgres.txt"
+with open(ruta, "w", encoding="utf-8") as f:
+    f.write(comandos)
+
+ruta

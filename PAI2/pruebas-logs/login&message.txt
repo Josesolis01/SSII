@@ -1,0 +1,28 @@
+PS C:\Users\python clientsocket.pysource-code>
+Conectado al servidor SSL en localhost:3030
+Eres nuevo usuario o quieres loggearte? nuevo/login
+> login
+Implementando la funcionalidad de login
+
+Introduce un nombre de usuario:
+> marta
+Introduce una contrasena:
+> Marta123?
+Que deseas hacer?
+1. Enviar mensaje
+2. Leer mensajes
+3. Cerrar sesion
+>
+1
+Introduce el nombre del destinatario:
+> antonio
+Introduce el mensaje:
+> Hola Antonio, soy Marta. Un saludo!
+Mensaje enviado correctamente.
+Que deseas hacer?
+1. Enviar mensaje
+2. Leer mensajes
+3. Cerrar sesion
+>
+3
+Servidor cerró la conexión.

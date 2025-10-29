@@ -1,0 +1,61 @@
+# clientsocket.py
+import socket
+
+HOST = "127.0.0.1"  # The server's hostname or IP address
+PORT = 3030         # The port used by the server
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+    s.connect((HOST, PORT))
+
+    # 1) Recibir la pregunta inicial del servidor
+    pregunta = s.recv(1024).decode().strip()
+    print(pregunta)
+
+    # 2) Responder: escribe 'nuevo' para registrar
+    opcion = input("> ").strip().lower()
+    s.sendall(opcion.encode())
+
+    if opcion == "nuevo":
+        # 3) Recibir prompt de usuario y responder
+        prompt_user = s.recv(1024).decode().strip()
+        print(prompt_user)
+        username = input("> ").strip()
+        s.sendall(username.encode())
+
+        #Bucle por si falla la contraseña y hay que volver a pedirla
+        while True: 
+            # 4) Recibir prompt de contraseña y responder
+            prompt_pass = s.recv(1024).decode().strip()
+            print(prompt_pass)
+            password = input("> ").strip()
+            s.sendall(password.encode())
+
+            # 5) Recibir confirmación de registro
+            resp = s.recv(1024).decode().strip()
+            print(resp)
+
+            # 6) Comprobar si el registro fue exitoso
+            if "Registro completado." in resp:
+                break # Salir del bucle si la contraseña es válida
+
+
+    elif opcion == "login":
+        print("Implementando la funcionalidad de login")
+        # 3) Recibir prompt de usuario y responder
+        prompt_user = s.recv(1024).decode().strip()
+        print(prompt_user)
+        username = input("> ").strip()
+        s.sendall(username.encode())
+
+        # 4) Recibir prompt de contraseña y responder
+        prompt_pass = s.recv(1024).decode().strip()
+        print(prompt_pass)
+        password = input("> ").strip()
+
+        s.sendall(password.encode())
+
+        # 5) Recibir confirmación de registro
+        resp = s.recv(1024).decode().strip()
+        print(resp)
+    else:
+        print("Opción no reconocida. Terminando conexión.")

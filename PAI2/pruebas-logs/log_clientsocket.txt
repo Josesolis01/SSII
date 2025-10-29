@@ -1,0 +1,26 @@
+PS C:\Users\PC1\Desktop\SSII\PAI2\codigo_demo\demo_python> python clientsocket.py
+Conectado al servidor SSL en localhost:3030
+Eres nuevo usuario o quieres loggearte? nuevo/login
+> login
+Implementando la funcionalidad de login
+
+Introduce un nombre de usuario:
+> marta
+Introduce una contrasena:
+> Marta123!
+Que deseas hacer?
+1. Enviar mensaje
+2. Leer mensajes
+3. Cerrar sesion
+>
+1
+Introduce el nombre del destinatario:
+> luis
+Introduce el mensaje:
+> Hola, soy Marta!!
+Mensaje enviado correctamente.
+Que deseas hacer?
+1. Enviar mensaje
+2. Leer mensajes
+3. Cerrar sesion
+>

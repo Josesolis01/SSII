@@ -1,0 +1,12 @@
+PS C:\Users\PC1\Desktop\SSII\PAI2\source-code> python estres_test_client.py
+🔧 Preparando usuarios de prueba...
+✅ Todos los usuarios de prueba ya existían.
+
+ Iniciando prueba con 300 conexiones simultáneas... 
+ Tiempo: 4s | 🟢 Conexiones activas: 300/300
+
+---  PRUEBA EXITOSA: Las 300 conexiones están abiertas y persistentes. ---
+Monitorizando estabilidad... (Detén con Ctrl+C)     
+
+
+Prueba detenida por el usuario.

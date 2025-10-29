@@ -1,0 +1,9 @@
+PS C:\Users\PC1\Desktop\SSII\PAI2\source-code> python clientsocket.py
+Conectado al servidor SSL en localhost:3030
+Eres nuevo usuario o quieres loggearte? nuevo/login
+> nuevo
+Introduce un nombre de usuario:
+> marta
+Introduce una contrasena:
+> Marta123?
+Registro completado.
