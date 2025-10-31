@@ -1,0 +1,17 @@
+Este apartado requiere evaluar la idoneidad del método LSB (Least Significant Bit) para ocultar firmas en imágenes BMP.
+
+Paso 1: Análisis de Tamaño (Capacidad)
+
+    Objetivo: Determinar el tamaño mínimo que debe tener la imagen original (sin tener que aumentarlo) para ocultar las firmas, cuyo tamaño está entre 128 y 512 caracteres.
+
+Concepto de LSB: En una imagen BMP sin compresión, cada píxel suele tener 3 bytes (Rojo, Verde, Azul). Usando el método LSB, se puede ocultar 1 bit de información por cada byte de color. Por lo tanto, cada píxel puede ocultar 3 bits (1 bit en el LSB de R, 1 en el LSB de G, 1 en el LSB de B).
+
+Cálculo:
+
+    Convertir el tamaño máximo del mensaje (512 caracteres) a bits. Asumiendo 1 carácter = 8 bits: 512 caracteres×8 bits/caraˊcter=4096 bits.
+
+    Calcular el número mínimo de píxeles necesarios: 3 bits/pıˊxel4096 bits​≈1365.33 pıˊxeles.
+
+    Resultado: Se necesita una imagen con al menos 1366 píxeles. Dimensiones comunes podrían ser 37×37 píxeles (1369 píxeles), aunque se recomienda un tamaño mayor para mayor discreción visual (por ejemplo, 64×64=4096 píxeles).
+
+Acción: Presentar el cálculo y sugerir unas dimensiones mínimas adecuadas para una imagen BMP.
